@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
+}
+
+body {
+  background-color: darkcyan;
+  color: white;
+}
+
+
+.container {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .message-row {
+    background-color:white;
+    color: darkcyan;
+    margin: 15px 0;
+    border-radius: 10px;
+    width: 800px;
+    padding-top: 10px;
+    text-align: left ;
+  }
+  .info {
+    background-color: beige;
+    color: black;
+    border-radius: 10px;
+    width: 800px;
+    text-align: left;
+  }
+  .form-select {
+    height: fit-content;
+    margin-top: 15px;
+  }
+
+}
+
