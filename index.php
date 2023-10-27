@@ -1,6 +1,24 @@
 <?php 
-  $limit = 50
-?>
+  $limit = 50;
+
+  // effettuo un controllo con if isset
+  if(isset($_POST['submit'])) {
+    $password = generateRandomPassword($_POST['numbers']);
+  }
+
+  
+  function generateRandomPassword($length) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+-=[]{}|;:,.<>?';
+    $password = '';
+    $max = strlen($characters) - 1;
+    
+    for ($i = 0; $i < $length; $i++) {
+      $password .= $characters[rand(0, $max)];
+    }
+    
+    return $password;
+  };
+  ?>
 
 
 
@@ -40,22 +58,26 @@
 
         <div class="div">
           <h4>Lunghezza password</h4>
-          <button class="btn btn-primary ">Invia</button>
+          <button type="submit" class="btn btn-primary ">Invia</button>
           <button class="btn btn-secondary ">Annulla</button>
         </div>
 
         <!-- Creo lista numeri con ciclo for -->
         <div class="div">
-          <select class="form-select">
-            <?php for ($i = 0; $i < $limit; $i++) { 
-              echo "<option>$i</option>";
-            } ?>
-          </select>
+          <form action="index.php" method="post">
+            <select class="form-select" name="numbers">
+              <?php for ($i = 0; $i < $limit; $i++) { 
+                echo "<option>$i</option>";
+              } ?>
+            </select>
+          </form>
         </div>
 
       </div>
 
     </div>
+
+    <h4>La password è: <?php echo generateRandomPassword($_POST['numbers']); ?></h4>
 
 
   </div>
