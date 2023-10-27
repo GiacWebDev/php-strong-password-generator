@@ -1,5 +1,6 @@
 <?php 
   $limit = 50;
+  $password = '';
 
   // effettuo un controllo con if isset
   if(isset($_POST['submit'])) {
@@ -11,13 +12,13 @@
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+-=[]{}|;:,.<>?';
     $password = '';
     $max = strlen($characters) - 1;
-    
+
     for ($i = 0; $i < $length; $i++) {
-      $password .= $characters[rand(0, $max)];
+        $password .= $characters[rand(0, $max)];
     }
-    
+
     return $password;
-  };
+  }
   ?>
 
 
@@ -77,7 +78,7 @@
 
     </div>
 
-    <h4>La password è: <?php echo generateRandomPassword($_POST['numbers']); ?></h4>
+    <h4>La password è: <?php echo $password; ?></h4>
 
 
   </div>
