@@ -10,6 +10,7 @@ body {
 }
 
 
+
 .container {
   text-align: center;
   display: flex;
@@ -35,6 +36,9 @@ body {
   .form-select {
     height: fit-content;
     margin-top: 15px;
+  }
+  span {
+    margin-left: 100px;
   }
 
 }
